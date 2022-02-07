@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Lenorink</title>
+  <link rel="icon" href="img/gear.ico" />
+  <link rel="shortcut icon" href="img/gear.ico" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+  <!-- MDB -->
+  <link rel="stylesheet" href="css/mdb.min.css" />
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!--Main Navigation-->
+  <header>
+    <style>
+      #intro {
+        background-image: url("img/index_bg.jpg");
+        height: 100vh;
+      }
+
+      /* Height for devices larger than 576px */
+      @media (min-width: 992px) {
+        #intro {
+          margin-top: -58.59px;
+        }
+      }
+
+      .navbar .nav-link {
+        color: #fff !important;
+      }
+    </style>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
+      <div class="container-fluid">
+        <!-- Navbar brand -->
+        <a class="navbar-brand nav-link" target="_self" href="index.html"> Lenor.ink</a>
+        <div class="collapse navbar-collapse" id="navbarExample01">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"> </ul>
+
+          <ul class="navbar-nav d-flex flex-row">
+            <li class="nav-item me-3 me-lg-0">
+              <a class="nav-link" href="https://github.com/LenorEric" rel="nofollow"
+                target="_blank">
+                <i class="fab fa-github fa-1x"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar -->
+
+    <!-- Background image -->
+    <div id="intro" class="bg-image shadow-2-strong">
+      <div class="mask" style="background-color: rgba(0, 0, 0, 0.7);">
+        <div class="container d-flex align-items-center justify-content-center text-center h-100">
+          <div class="text-white">
+            <h1 class="display-1 mb-3">Welcome to Lenor.ink</h1>
+            <p class="lead mb-5">What if we are able to link everyone?</p>
+            <div id="userBtn" style="display: none;">
+              <a class="btn btn-outline-light btn-lg m-2" href="dashboard.html" role="button" rel="nofollow"
+                target="_self">Dashboard</a>
+              <div class="btn btn-outline-light btn-lg m-2" role="button" onclick="logout()">Logout</div>
+            </div>
+            <div id="visitorBtn" style="display: none;">
+              <a class="btn btn-outline-light btn-lg m-2" href="wallpaper\index.html" role="button" rel="nofollow"
+                target="_self">try lenor's wallpaper</a>
+              <a class="btn btn-outline-light btn-lg m-2" href="login.html" target="_self" role="button">
+                Insider Login</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Background image -->
+  </header>
+  <!--Main Navigation-->
+
+  <!--Main layout-->
+  <main class="mt-5">
+    <div class="container">
+      <!--Section: Content-->
+      <section>
+        <div class="row">
+          <div class="col-md-6 gx-5 mb-4">
+            <div class="bg-image hover-overlay ripple shadow-2-strong" data-mdb-ripple-color="light">
+              <!-- <img src="https://mdbootstrap.com/img/new/slides/031.jpg" class="img-fluid" /> -->
+              <!-- <img src="https://z3.ax1x.com/2021/06/02/2lVlrQ.jpg" class="img-fluid" /> -->
+              <img src="https://z3.ax1x.com/2021/06/02/2lVodA.jpg" class="img-fluid" />
+              <a href="index.html">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-6 gx-5 mb-4">
+            <h4><strong>Get familiar with Lenorink</strong></h4>
+            <p class="text-muted">
+              Lenorink is a communicating project initiated by Lenor, which aiming to improve the efficiency of communication while developers are working for a project.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <!--Main layout-->
+
+  <!--Footer-->
+  <footer class="bg-light text-lg-start">
+
+    <hr class="m-0" />
+      <!-- <a href="https://github.com/Rainy-Memory/TicketSystem-Automata" class="btn btn-primary m-1" role="button"
+        rel="nofollow" target="_blank">
+        <i class="fab fa-github fa-2x"></i>
+      </a>
+      <a href="https://github.com/Rainy-Memory/TicketSystem-Automata" class="btn btn-primary m-1" role="button"
+        rel="nofollow" target="_blank">
+        <i class="fab fa-github fa-2x"></i>
+      </a>
+      <a href="https://github.com/Rainy-Memory/TicketSystem-Automata" class="btn btn-primary m-1" role="button"
+        rel="nofollow" target="_blank">
+        <i class="fab fa-github fa-2x"></i>
+      </a> -->
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2021 Copyleft
+      <a class="text-dark" target="_blank" href="https://www.lenor.ink">Lenor.ink</a>
+		<div style="width:300px;margin:0 auto; padding:20px 0;">		沪ICP备2021017799号-1
+		 		<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010702007049" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="img/备案图标.png" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">沪公网安备 31010702007049号</p></a>
+		</div>
+    </div>
+
+		 
+    <!-- Copyright -->
+  </footer>
+  <!--Footer-->
+  <!-- MDB -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Custom scripts -->
+  <script type="text/javascript" src="js/script.js"></script>
+
+  <script>
+
+    window.onload = function () {
+      var username = getCookie("username");
+      if (username != "")
+        document.getElementById("userBtn").style.display = "inline";
+      else document.getElementById("visitorBtn").style.display = "inline";
+    }
+
+  </script>
+</body>
+
+</html>

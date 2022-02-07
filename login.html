@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Login</title>
+  <link rel="icon" href="img/gear.ico" />
+  <link rel="shortcut icon" href="img/gear.ico" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+  <!-- Google Fonts Roboto -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+  <!-- MDB -->
+  <link rel="stylesheet" href="css/mdb.min.css" />
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="css/style.css" />
+
+</head>
+
+<body>
+  <!--Main Navigation-->
+  <header>
+    <style>
+      #intro {
+        background-image: url("img/login_bg.jpg");
+        height: 100vh;
+      }
+
+      /* Height for devices larger than 576px */
+      @media (min-width: 992px) {
+        #intro {
+          margin-top: -58.59px;
+        }
+      }
+
+      .navbar .nav-link {
+        color: #fff !important;
+      }
+    </style>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-block" style="z-index: 2000;">
+      <div class="container-fluid">
+        <!-- Navbar brand -->
+        <a class="navbar-brand nav-link" target="_self" href="index.html"> Lenor.ink </a>
+        <div class="collapse navbar-collapse" id="navbarExample01">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0"> </ul>
+
+          <ul class="navbar-nav d-flex flex-row">
+            <li class="nav-item me-3 me-lg-0">
+              <a class="nav-link" href="https://github.com/LenorEric" rel="nofollow"
+                target="_blank">
+                <i class="fab fa-github fa-1x"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar -->
+
+    <!-- Background image -->
+    <div id="intro" class="bg-image shadow-2-strong">
+      <div class="mask d-flex align-items-center h-100" style="background-color: rgba(0, 0, 0, 0.7);">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-xxl-4 col-xl-5 col-lg-6 col-md-7 col-sm-9">
+              <div class="text-white">
+                <h1 class="display-1 mb-5 text-center">Login</h1>
+              </div>
+              <form class="bg-white rounded shadow-5-strong p-5 mb-6">
+                <!-- style="background-color: rgba(255, 255, 255, 0.9)" -->
+
+                <!-- Text input -->
+                <div class="form-outline mb-4">
+                  <input type="text" id="username" class="form-control" onkeydown="keyEnter()" />
+                  <label class="form-label" for="username">Username</label>
+                </div>
+
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  <input type="password" id="password" class="form-control" onkeydown="keyEnter()" />
+                  <label class="form-label" for="password">Password</label>
+                </div>
+
+                <!-- 2 column grid layout for inline styling -->
+                <div class="row mb-4">
+                  <div class="col d-flex justify-content-between">
+                    <!-- Checkbox -->
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="checkBox" checked />
+                      <label class="form-check-label" for="checkBox"> Remember me </label>
+                    </div>
+                  </div>
+
+                  <div class="col text-end">
+                    <!-- Simple link -->
+<!--                    <a class="text-primary" type="button" href="register.html" target="_self">Register</a>-->
+                  </div>
+                </div>
+
+                <!-- Submit button -->
+                <button type="button" id="loginBtn" class="btn btn-primary btn-block" onclick="login()">login</button>
+				<p>
+					<br/>
+				  <font color="gray" id="loginHint"></font>
+				  </p>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Background image -->
+  </header>
+  <!--Main Navigation-->
+
+  <!--Footer-->
+  <footer class="bg-light text-lg-start">
+    <hr class="m-0" />
+    <!-- Copyright -->
+     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2021 Copyleft
+      <a class="text-dark" target="_blank" href="https://www.lenor.ink">Lenor.ink</a>
+		<br>
+		沪ICP备2021017799号-1
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!--Footer-->
+  <!-- MDB -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <!-- Custom scripts -->
+  <script type="text/javascript" src="js/script.js"></script>
+
+  <script>
+
+    // $(document).keydown(function (event) {
+    //   if (event.keyCode == 13) {
+    //     document.getElementById("loginBtn").click();
+    //   }
+    // });
+
+    function keyEnter() {
+      if (event.keyCode == 13)  //回车键的键值为13 
+        document.getElementById("loginBtn").click(); //调用登录按钮的登录事件 
+    }
+
+    function login() {
+      if (getCookie("username") != "") {
+        alert("You have logged in! Please logout first and then login another account.");
+        window.location.href = "dashboard.html";
+      }
+      var xmlhttp = new XMLHttpRequest();
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+      if (username != "" && password != "") {
+        xmlhttp.open("POST", "php/login.php", true);
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlhttp.onreadystatechange = function () {
+          if (xmlhttp.readyState == 4) {
+            if (xmlhttp.status == 200) {
+              var returnMsg = xmlhttp.responseText;
+              // alert(returnMsg);
+              if (returnMsg != "0") {
+			  document.getElementById("loginHint").innerHTML = "\nPlease contact your supervisor to obtain an account if you don't have one.";
+                document.getElementById("loginBtn").className = "btn btn-danger btn-block";
+                document.getElementById("loginBtn").innerHTML = "Unaccepted User";
+                setTimeout(function () {
+                  document.getElementById("loginBtn").className = "btn btn-primary btn-block";
+                  document.getElementById("loginBtn").innerHTML = "login";
+                }, 3000);
+              }
+              else {
+                document.getElementById("loginBtn").className = "btn btn-success btn-block";
+                document.getElementById("loginBtn").innerHTML = "success";
+                var checkFlag = document.getElementById('checkBox').checked;
+                if (checkFlag) setCookie("username", username, 7);
+                else setCookie("username", username);
+                setTimeout(function () { window.location.href = "dashboard.html"; }, 1000);
+              }
+            } else {
+			document.getElementById("loginHint").innerHTML = "\nPlease contact your supervisor to obtain an account if you don't have one.";
+                document.getElementById("loginBtn").className = "btn btn-danger btn-block";
+                document.getElementById("loginBtn").innerHTML = "Unaccepted User";
+                setTimeout(function () {
+                  document.getElementById("loginBtn").className = "btn btn-primary btn-block";
+                  document.getElementById("loginBtn").innerHTML = "login";
+                }, 3000);
+              <!-- alert("Unexpected Error :("); -->
+            }
+          }
+        }
+        document.getElementById("loginBtn").innerHTML = "loading...";
+        xmlhttp.send("username=" + username + "&password=" + password);
+      } else {
+	  document.getElementById("loginHint").innerHTML = "Please contact your supervisor to obtain an account if you don't have one.";
+        document.getElementById("loginBtn").className = "btn btn-warning btn-block";
+        document.getElementById("loginBtn").innerHTML = "please input username and password";
+        setTimeout(function () {
+          document.getElementById("loginBtn").className = "btn btn-primary btn-block";
+          document.getElementById("loginBtn").innerHTML = "login";
+        }, 3000);
+      }
+    }
+  </script>
+
+</body>
+
+</html>
